@@ -15,6 +15,7 @@ import { DynamicOkjike } from "./dynamic/okjike";
 import { DynamicPinterest } from "./dynamic/pinterest";
 import { DynamicReddit } from "./dynamic/reddit";
 import { DynamicRednote } from "./dynamic/rednote";
+import { DynamicSohuTv } from "./dynamic/sohutv";
 import { DynamicSubstack } from "./dynamic/substack";
 import { DynamicThreads } from "./dynamic/threads";
 import { DynamicToutiao } from "./dynamic/toutiao";
@@ -190,6 +191,17 @@ export const DynamicInfoMap: Record<string, PlatformInfo> = {
     injectFunction: DynamicKuaishou,
     tags: ["CN"],
     accountKey: "kuaishou",
+  },
+  DYNAMIC_SOHUTV: {
+    type: "DYNAMIC",
+    name: "DYNAMIC_SOHUTV",
+    homeUrl: "https://tv.sohu.com/s/center/",
+    faviconUrl: "https://tv.sohu.com/favicon.ico",
+    platformName: chrome.i18n.getMessage("platformSohuTv"),
+    injectUrl: "https://tv.sohu.com/s/center/",
+    injectFunction: DynamicSohuTv,
+    tags: ["CN"],
+    accountKey: "sohu",
   },
   DYNAMIC_BAIJIAHAO: {
     type: "DYNAMIC",

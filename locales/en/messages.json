@@ -689,6 +689,10 @@
     "message": "Sohu",
     "description": "Platform name for Sohu"
   },
+  "platformSohuTv": {
+    "message": "Sohu Video",
+    "description": "Platform name for Sohu Video"
+  },
   "platformAliyun": {
     "message": "Aliyun",
     "description": "Platform name for Aliyun"

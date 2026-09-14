@@ -1,6 +1,7 @@
 import type { PlasmoCSConfig } from "plasmo";
 import { handleBilibiliImageUpload } from "./helper/bilibili";
 import { handleBlueskyImageUpload, handleBlueskyVideoUpload } from "./helper/bluesky";
+import { handleJianpianUpload, prepareJianpianInput } from "./helper/jianpian";
 import { handleWeiboVideoUpload, prepareWeiboVideoInput } from "./helper/weibo";
 import { handleXiaoheiheImageUpload, handleXiaoheiheVideoUpload } from "./helper/xiaoheihe";
 
@@ -12,6 +13,7 @@ export const config: PlasmoCSConfig = {
     "https://v2ex.com/write*",
     "https://www.xiaoheihe.cn/creator/editor/*",
     "https://weibo.com/upload/channel*",
+    "https://www.jianpian.cn/p/edit*",
   ],
   world: "MAIN",
   run_at: "document_start",
@@ -32,7 +34,7 @@ document.createElement = (tagName, options) => {
   if (tagName.toLowerCase() === "input") {
     createdInputs.push(element);
     prepareWeiboVideoInput(element);
-    console.log("element", element);
+    prepareJianpianInput(element);
   }
   return element;
 };
@@ -61,6 +63,8 @@ function handleMessage(event: MessageEvent) {
     handleXiaoheiheVideoUpload(event);
   } else if (data.type === "WEIBO_UPLOAD_VIDEO") {
     handleWeiboVideoUpload(event);
+  } else if (data.type === "JIANPIAN_UPLOAD") {
+    handleJianpianUpload(event);
   }
 }
 

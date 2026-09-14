@@ -667,6 +667,10 @@
     "message": "搜狐号",
     "description": "搜狐号平台名称"
   },
+  "platformSohuTv": {
+    "message": "搜狐视频",
+    "description": "搜狐视频平台名称"
+  },
   "platformAliyun": {
     "message": "阿里云",
     "description": "阿里云平台名称"

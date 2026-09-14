@@ -16,6 +16,7 @@ import { VideoPinduoduo } from "./video/pinduoduo";
 import { VideoQiE } from "./video/qie";
 import { VideoRednote } from "./video/rednote";
 import { VideoSohu } from "./video/sohu";
+import { VideoSohuTv } from "./video/sohutv";
 import { VideoTencentVideo } from "./video/tencentvideo";
 import { VideoTiktok } from "./video/tiktok";
 import { VideoToutiaohao } from "./video/toutiaohao";
@@ -249,6 +250,17 @@ export const VideoInfoMap: Record<string, PlatformInfo> = {
     platformName: chrome.i18n.getMessage("platformSohu"),
     injectUrl: "https://mp.sohu.com/mpfe/v4/contentManagement/news/addvideo",
     injectFunction: VideoSohu,
+    tags: ["CN"],
+    accountKey: "sohu",
+  },
+  VIDEO_SOHUTV: {
+    type: "VIDEO",
+    name: "VIDEO_SOHUTV",
+    homeUrl: "https://tv.sohu.com/s/center/",
+    faviconUrl: "https://tv.sohu.com/favicon.ico",
+    platformName: chrome.i18n.getMessage("platformSohuTv"),
+    injectUrl: "https://tv.sohu.com/s/center/",
+    injectFunction: VideoSohuTv,
     tags: ["CN"],
     accountKey: "sohu",
   },
